@@ -16,7 +16,7 @@
 [ElephanSQL](https://www.elephantsql.com/)
 
 ### API Client
-[Insomnia](https://insomnia.rest/download)
+[Postman](https://www.postman.com/downloads/)
 
 ### Conexão com Banco de Dados
 [PostBird](https://www.electronjs.org/apps/postbird)

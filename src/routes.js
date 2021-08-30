@@ -9,6 +9,8 @@ const routes = new Router();
 routes.post('/user', UserController.store);
 routes.post('/session', SessionController.store);
 
-routes.get('/qualquercoisa', authMiddleware, UserController.index);
+routes.use(authMiddleware);
+routes.get('/qualquercoisa', UserController.index);
+routes.put('/user', UserController.update);
 
 export default routes;
