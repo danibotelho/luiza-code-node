@@ -4,7 +4,6 @@ import User from '../models/User'
 class UserController{
   async store(req, res){
     const schema = Yup.object().shape({
-      //yup validador, valida o dado que esta recebendo
       name: Yup.string().required(),
       email: Yup.string().email().required(),
       password: Yup.string().required().min(6),
@@ -22,7 +21,7 @@ class UserController{
 
     if(userExists){
       return res.status(401).json({ message: 'Usuário já cadastrado em nossa base' })
-    }
+    };
 
     const { id, name, email } = await User.create(req.body);
     return res.json({id, name, email});
@@ -38,7 +37,6 @@ class UserController{
   async delete(req, res){
     return res.status(200).json({ message: 'Isso aí psiti!'});
   };
-
   async update(req, res){
     const schema = Yup.object().shape({
       name: Yup.string(),
@@ -48,8 +46,7 @@ class UserController{
         (oldPassword, field) => oldPassword ? field.required().min(6) : field
       ),
       confirmPassword: Yup.string().when('password',
-        (password, field) => password ? field.required().min(6)
-        .oneOf([Yup.ref('password')]) : field
+        (password, field) => password ? field.required().min(6).oneOf([Yup.ref('password')]) : field
       ),
     })
 
@@ -58,8 +55,6 @@ class UserController{
         message: 'Falha na validação'
       })
     }
-
-   
 
     // console.log(req.userEmail)
 
@@ -91,6 +86,5 @@ class UserController{
     });
   };
 }
-
 
 export default new UserController();
