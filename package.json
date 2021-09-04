@@ -1,6 +1,9 @@
 {
   "name": "introducao-nodejs",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.16.0"
+  },
   "description": "### Iniciando com ExpressJS",
   "main": "index.js",
   "scripts": {
