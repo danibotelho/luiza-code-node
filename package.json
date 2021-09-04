@@ -30,6 +30,13 @@
   "devDependencies": {
     "nodemon": "^2.0.12",
     "sequelize-cli": "^6.2.0"
-    
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danibotelho/luiza-code-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danibotelho/luiza-code-node/issues"
+  },
+  "homepage": "https://github.com/danibotelho/luiza-code-node#readme"
 }
